@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.create_item {
+    color: white;
+    background: #70c570;
+    border: 2px solid #4CAF50;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin-right: 15px;
+    position: absolute;
+    right: 0;
+    top: 12px;
+    font-size: 16px;
+}
+
+.show_item {
+    color: white;
+    background: #4d88ff;
+    border: 2px solid #3366ff;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.delete_item {
+    color: white;
+    background: #ff6666;
+    border: 2px solid #e60000;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.edit_item {
+    color: white;
+    background: #ffc107;
+    border: 2px solid #e0a800;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.delete_icon {
+    transition: 0.2s linear;
+    width: 32px;
+    opacity: 70%;
+}
+
+.delete_icon:hover {
+    opacity: 100%;
+}
+
+.add_icon {
+    transition: 0.2s linear;
+    width: 42px;
+    opacity: 70%;
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    z-index: 1;
+}
+
+.add_icon:hover {
+    opacity: 100%;
+}
+
+.title_of_page {
+    margin: 30px 0 30px 0;
+    font-size: 28px;
+    color: #444;
+}
+
+.right {
+    position: absolute;
+    right: 50px;
+    top: 12%;
+}
+
+.right_element {
+    font-size: 15px;
+    text-align: center;
+    z-index: 999;
+    padding: 35px 35px;
+    position: fixed;
+    right: 4%;
+    top: 80vh;
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 120px;
+    transition: 0.5s ease-in-out;
+}
+
+.right_element:hover {
+    background: rgba(0, 0, 0, 0.95);
+}

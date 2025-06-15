@@ -1,0 +1,34 @@
+   1) src/Entity/Post.php (single_blank_line_at_eof)
+
+Found 1 of 41 files that can be fixed in 2.824 seconds, 18.00 MB memory used
+
+FILE: /home/wwwroot/app/src/Entity/Post.php
+----------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+----------------------------------------------------------------------
+ 257 | ERROR | [x] Expected 1 newline at end of file; 0 found
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+Time: 5.95 secs; Memory: 10MB
+
+ ------- -------- ---- ---------------------- 
+  State   Domain   Id   Message Preview (en)  
+ ------- -------- ---- ---------------------- 
+
+ ------- -------- ---- ---------------------- ------------------------------- 
+  State   Domain   Id   Message Preview (pl)   Fallback Message Preview (en)  
+ ------- -------- ---- ---------------------- ------------------------------- 
+
+[notice] Migrating up to DoctrineMigrations\Version20250609144632
+[notice] finished in 1069.8ms, used 24M memory, 1 migrations executed, 8 sql queries
+
+ [OK] Successfully migrated to version: DoctrineMigrations\Version20250609144632                                        
+
+
+   > purging database
+   > loading App\DataFixtures\AppFixtures
+   > loading App\DataFixtures\CategoryFixtures
+   > loading App\DataFixtures\UserFixtures
+   > loading App\DataFixtures\PostFixtures

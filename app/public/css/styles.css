@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1a73e8;
+}
+
+button, .btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+}
+
+.create_item {
+    background-color: #198754;
+    color: white;
+    box-shadow: 0 2px 6px rgba(25, 135, 84, 0.2);
+}
+
+.create_item:hover {
+    background-color: #157347;
+}
+
+.show_item {
+    background-color: #0d6efd;
+    color: white;
+    box-shadow: 0 2px 6px rgba(13, 110, 253, 0.2);
+}
+
+.show_item:hover {
+    background-color: #0b5ed7;
+}
+
+.edit_item {
+    background-color: #ffc107;
+    color: #212529;
+    box-shadow: 0 2px 6px rgba(255, 193, 7, 0.2);
+}
+
+.edit_item:hover {
+    background-color: #e0a800;
+    color: #fff;
+}
+
+.delete_item {
+    background-color: #dc3545;
+    color: white;
+    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.2);
+}
+
+.delete_item:hover {
+    background-color: #bb2d3b;
+}
+
+.delete_icon,
+.add_icon {
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.delete_icon:hover,
+.add_icon:hover {
+    opacity: 1;
+}
+
+.delete_icon {
+    width: 28px;
+}
+
+.add_icon {
+    width: 38px;
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    z-index: 2;
+}
+
+.title_of_page {
+    margin: 40px 0 20px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #222;
+}
+
+.right {
+    position: absolute;
+    right: 40px;
+    top: 12%;
+}
+
+.right_element {
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    background: rgba(33, 37, 41, 0.8);
+    padding: 20px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.right_element:hover {
+    background: rgba(33, 37, 41, 0.95);
+}
