@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Create Post
+    {{ 'title.post_create'|trans }}
 {% endblock %}
 
 {% block body %}
-    <h1>Create Post</h1>
+    <h1>{{ 'title.post_create'|trans }}</h1>
     {{ form_start(form) }}
     {{ form_widget(form) }}
     <div class="form-group row float-sm-right">
@@ -13,7 +13,7 @@
     </div>
     <div class="form-group row float-sm-left">
         <a href="{{ path('post_index') }}" class="btn btn-link">
-            Back to list
+            {{ 'action.back_to_list'|trans }}
         </a>
     </div>
     {{ form_end(form) }}

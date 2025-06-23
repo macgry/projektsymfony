@@ -37,7 +37,7 @@ class PostType extends AbstractType
             'title',
             TextType::class,
             [
-                'label' => 'Title', // Zmieniona etykieta na "Title"
+                'label' => 'label.title',
                 'required' => true,
                 'attr' => ['max_length' => 255],
             ]
@@ -46,7 +46,7 @@ class PostType extends AbstractType
             'content',
             TextType::class,
             [
-                'label' => 'Content',
+                'label' => 'label.content',
                 'required' => true,
                 'attr' => ['max_length' => 1000],
             ]
@@ -57,7 +57,7 @@ class PostType extends AbstractType
             [
                 'class' => Category::class,
                 'choice_label' => fn ($category): string => $category->getTitle(),
-                'label' => 'Category',
+                'label' => 'label.category',
                 'placeholder' => 'label.none',
                 'required' => true,
             ]
@@ -66,7 +66,7 @@ class PostType extends AbstractType
             'postDate',
             DateTimeType::class,
             [
-                'label' => 'Post Date', // Zmieniona etykieta na "Post Date"
+                'label' => 'label.post_date',
                 'required' => true,
                 'widget' => 'single_text',
                 'attr' => ['class' => 'js-datepicker'],

@@ -250,6 +250,14 @@
               <source>title.comment_delete</source>
               <target>Usuń komentarz #%id%</target>
             </trans-unit>
+            <trans-unit id="title.post_create">
+                <source>title.post_create</source>
+                <target>Stwórz post</target>
+            </trans-unit>
+            <trans-unit id="title.user_detail">
+                <source>title.user_detail</source>
+                <target>Szczegóły użytkownika #%id%</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

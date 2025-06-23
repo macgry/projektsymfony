@@ -12,10 +12,10 @@
 
         <div class="navigation">
             <ul>
-                <a href="{{ path('post_index') }}" class="btn btn-outline-primary">{{ 'posts'|trans }}</a>
-                <a href="{{ path('category_index') }}" class="btn btn-outline-primary">{{ 'categories'|trans }}</a>
+                <a href="{{ path('post_index') }}" class="btn btn-outline-primary">{{ 'menu.posts'|trans }}</a>
+                <a href="{{ path('category_index') }}" class="btn btn-outline-primary">{{ 'menu.categories'|trans }}</a>
                 {% if is_granted('ROLE_ADMIN') %}
-                <a href="{{ path('user_index') }}" class="btn btn-outline-primary">{{ 'users'|trans }}</a>
+                <a href="{{ path('user_index') }}" class="btn btn-outline-primary">{{ 'menu.users'|trans }}</a>
                 {% endif %}
             </ul>
         </div>

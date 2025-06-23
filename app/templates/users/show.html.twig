@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'User Details' }} {{ user.id|default('') }}
+    {{ 'title.user_detail'|trans({'%id%': user.id|default('')}) }}
 {% endblock %}
 
 {% block body %}
-    <h1>{{ 'User Details' }} {{ user.id|default('') }}</h1>
+    <h1>{{ 'title.user_detail'|trans({'%id%': user.id|default('')}) }}</h1>
 
     <a href="{{ url('user_edit', {id: user.id}) }}" title="{{ 'action.edit'|trans }}">
         {{ 'action.edit'|trans }}

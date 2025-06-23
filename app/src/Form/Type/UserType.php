@@ -34,11 +34,11 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Email',
+                'label' => 'label.email',
                 'required' => true,
             ])
             ->add('roles', ChoiceType::class, [
-                'label' => 'Roles',
+                'label' => 'label.roles',
                 'required' => true,
                 'multiple' => true, // Allow multiple selection
                 'choices' => [
