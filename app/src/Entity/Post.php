@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Post entity.
  */
@@ -82,28 +83,6 @@ class Post
      */
     #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeImmutable $postDate = null;
-
-    #[ORM\OneToMany(mappedBy: 'post', targetEntity: Comment::class, orphanRemoval: true)]
-    private Collection $comments;
-
-    /**
-     * Constructor.
-     */
-    public function __construct()
-    {
-        $this->comments = new ArrayCollection();
-        $this->postDate = new \DateTimeImmutable();
-    }
-
-    /**
-     * Getter for comments.
-     *
-     * @return Collection<int, Comment>
-     */
-    public function getComments(): Collection
-    {
-        return $this->comments;
-    }
 
     /**
      * Getter for Id.

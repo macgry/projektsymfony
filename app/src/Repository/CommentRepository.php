@@ -19,11 +19,6 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CommentRepository extends ServiceEntityRepository
 {
-    /**
-     * Constructor.
-     *
-     * @param ManagerRegistry $registry Manager Registry
-     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Comment::class);
@@ -48,7 +43,7 @@ class CommentRepository extends ServiceEntityRepository
     /**
      * Save entity.
      *
-     * @param Comment $comment Post entity
+     * @param Comment $comment Comment entity
      *
      * @throws ORMException
      */
@@ -71,20 +66,6 @@ class CommentRepository extends ServiceEntityRepository
         assert($this->_em instanceof EntityManager);
         $this->_em->remove($comment);
         $this->_em->flush();
-    }
-
-    /**
-     * Find comments by post.
-     *
-     * @param Post $post Post entity
-     *
-     * @return QueryBuilder QueryBuilder
-     */
-    public function findByPost(Post $post): QueryBuilder
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('comment.post = :post')
-            ->setParameter('post', $post);
     }
 
     /**

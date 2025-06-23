@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>{{ 'welcome'|trans }}!</title>
+    <title>{{ 'title.welcome'|trans }}!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -13,17 +13,17 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="{{ url('main_index') }}">{{ 'mainpage'|trans }} <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="{{url('post_index')}}">{{ 'posts'|trans }}</a>
-                    <a class="nav-item nav-link" href="{{ url('category_index') }}">{{ 'categories'|trans }}</a>
+                    <a class="nav-item nav-link active" href="{{ url('main_index') }}">{{ 'menu.mainpage'|trans }} <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="{{url('post_index')}}">{{ 'menu.posts'|trans }}</a>
+                    <a class="nav-item nav-link" href="{{ url('category_index') }}">{{ 'menu.categories'|trans }}</a>
                     {% if is_granted('ROLE_ADMIN') %}
-                        <a class="nav-item nav-link" href="{{ url('user_index') }}">{{ 'users'|trans }}</a>
+                        <a class="nav-item nav-link" href="{{ url('user_index') }}">{{ 'menu.users'|trans }}</a>
                     {% endif %}
                 </div>
             </div>
         </nav>
         <!-- Logout button -->
-        <a href="{{ url('app_logout') }}"><div class="btn btn-outline-primary">{{ 'logout'|trans }}</div></a>
+        <a href="{{ url('app_logout') }}"><div class="btn btn-outline-primary">{{ 'action.logout'|trans }}</div></a>
     {% endif %}
 
     {% block body %}{% endblock %}

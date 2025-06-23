@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Post controller.
  */
@@ -12,6 +13,7 @@ use App\Form\Type\PostType;
 use App\Repository\CommentRepository;
 use App\Resolver\PostListInputFiltersDtoResolver;
 use App\Service\PostServiceInterface;
+use App\Service\CommentServiceInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -80,16 +82,10 @@ class PostController extends AbstractController
      * @return Response HTTP response
      */
     #[Route('/post/{id}', name: 'post_show', methods: ['GET'])]
-    public function show(Post $post, CommentRepository $commentRepository, PaginatorInterface $paginator, Request $request): Response
+    public function show(Post $post, Request $request, CommentServiceInterface $commentService): Response
     {
-        $queryBuilder = $commentRepository->queryAllByPost($post);
         $page = $request->query->getInt('page', 1);
-
-        $commentPagination = $paginator->paginate(
-            $queryBuilder,
-            $page,
-            10 // number of comments per page
-        );
+        $commentPagination = $commentService->getPaginatedListByPost($post, $page);
 
         return $this->render('post/show.html.twig', [
             'post' => $post,

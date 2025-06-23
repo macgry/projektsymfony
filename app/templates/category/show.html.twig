@@ -20,13 +20,13 @@
         </dl>
 
         <p>
-            <a href="{{ path('category_index') }}" title="{{ 'backtolist'|trans }}">
-                {{ 'backtolist'|trans }}
+            <a href="{{ path('category_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                {{ 'action.back_to_list'|trans }}
             </a>
         </p>
     {% else %}
         <p>
-            {{ 'Category not found.'|trans }}
+            {{ 'message.category_not_found'|trans }}
         </p>
     {% endif %}
 {% endblock %}

@@ -14,6 +14,7 @@ namespace App\Service;
 use App\Dto\PostListFiltersDto;
 use App\Dto\PostListInputFiltersDto;
 use App\Entity\Comment;
+use App\Entity\Post;
 use App\Repository\CommentRepository;
 use Knp\Bundle\PaginatorBundle\Pagination\SlidingPagination;
 use Knp\Component\Pager\Pagination\PaginationInterface;
@@ -24,35 +25,16 @@ use Knp\Component\Pager\PaginatorInterface;
  */
 class CommentService implements CommentServiceInterface
 {
-    /**
-     * Items per page.
-     *
-     * Use constants to define configuration options that rarely change instead
-     * of specifying them in app/config/config.yml.
-     * See https://symfony.com/doc/current/best_practices.html#configuration
-     *
-     * @constant int
-     */
     private const PAGINATOR_ITEMS_PER_PAGE = 10;
 
-    /**
-     * Constructor.
-     *
-     * @param CategoryServiceInterface $categoryService   Category service
-     * @param PaginatorInterface       $paginator         Paginator
-     * @param CommentRepository        $commentRepository comment repository
-     */
-    public function __construct(private readonly CategoryServiceInterface $categoryService, private readonly PaginatorInterface $paginator, private readonly CommentRepository $commentRepository)
-    {
-    }
+    public function __construct(
+        private readonly CategoryServiceInterface $categoryService,
+        private readonly PaginatorInterface $paginator,
+        private readonly CommentRepository $commentRepository
+    ) {}
 
     /**
-     * Get paginated list.
-     *
-     * @param int                     $page    Page number
-     * @param PostListInputFiltersDto $filters Filters
-     *
-     * @return PaginationInterface<SlidingPagination> Paginated list
+     * Get paginated list of all comments (with filters).
      */
     public function getPaginatedList(int $page, PostListInputFiltersDto $filters): PaginationInterface
     {
@@ -66,36 +48,33 @@ class CommentService implements CommentServiceInterface
     }
 
     /**
-     * Save entity.
-     *
-     * @param Comment $comment comment entity
+     * Get paginated comments for a specific post.
      */
+    public function getPaginatedListByPost(Post $post, int $page): PaginationInterface
+    {
+        return $this->paginator->paginate(
+            $this->commentRepository->queryAllByPost($post),
+            $page,
+            self::PAGINATOR_ITEMS_PER_PAGE
+        );
+    }
+
     public function save(Comment $comment): void
     {
         $this->commentRepository->save($comment);
     }
 
-    /**
-     * Delete entity.
-     *
-     * @param Comment $comment Comment entity
-     */
     public function delete(Comment $comment): void
     {
         $this->commentRepository->delete($comment);
     }
 
-    /**
-     * Prepare filters for the comments list.
-     *
-     * @param PostListInputFiltersDto $filters Raw filters from request
-     *
-     * @return PostListFiltersDto Result filters
-     */
     private function prepareFilters(PostListInputFiltersDto $filters): PostListFiltersDto
     {
         return new PostListFiltersDto(
-            null !== $filters->categoryId ? $this->categoryService->findOneById($filters->categoryId) : null
+            null !== $filters->categoryId
+                ? $this->categoryService->findOneById($filters->categoryId)
+                : null
         );
     }
 }

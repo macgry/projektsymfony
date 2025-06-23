@@ -10,28 +10,12 @@
         <source>label.id</source>
         <target>Id</target>
       </trans-unit>
-      <trans-unit id="ID">
-        <source>ID</source>
-        <target>ID</target>
-      </trans-unit>
-      <trans-unit id="Created At">
-        <source>Created At</source>
-        <target>Created At</target>
-      </trans-unit>
-      <trans-unit id="Updated At">
-        <source>Updated At</source>
-        <target>Updated At</target>
-      </trans-unit>
-      <trans-unit id="Title">
-        <source>Title</source>
-        <target>Title</target>
-      </trans-unit>
-      <trans-unit id="Category not found.">
-        <source>Category not found.</source>
+      <trans-unit id="message.category_not_found">
+        <source>message.category_not_found</source>
         <target>Category not found.</target>
       </trans-unit>
-      <trans-unit id="Blog">
-        <source>Blog</source>
+      <trans-unit id="title.blog">
+        <source>title.blog</source>
         <target>Blog</target>
       </trans-unit>
       <trans-unit id="title.user_create">
@@ -42,45 +26,21 @@
         <source>title.user_delete</source>
         <target>Delete user</target>
       </trans-unit>
-      <trans-unit id="Users List">
-        <source>Users List</source>
-        <target>Users List</target>
-      </trans-unit>
-      <trans-unit id="Email">
-        <source>Email</source>
-        <target>Email</target>
-      </trans-unit>
-      <trans-unit id="Role">
-        <source>Role</source>
+      <trans-unit id="label.role">
+        <source>label.role</source>
         <target>Role</target>
       </trans-unit>
-      <trans-unit id="No users found.">
-        <source>No users found.</source>
+      <trans-unit id="message.no_users_found">
+        <source>message.no_users_found</source>
         <target>No users found.</target>
       </trans-unit>
-      <trans-unit id="Save">
-        <source>Save</source>
-        <target>Save</target>
-      </trans-unit>
-      <trans-unit id="Back to list">
-        <source>Back to list</source>
-        <target>Back to list</target>
-      </trans-unit>
-      <trans-unit id="Edit">
-        <source>Edit</source>
-        <target>Edit</target>
-      </trans-unit>
-      <trans-unit id="User not found.">
-        <source>User not found.</source>
+      <trans-unit id="message.user_not_found">
+        <source>message.user_not_found</source>
         <target>User not found.</target>
       </trans-unit>
-      <trans-unit id="Roles">
-        <source>Roles</source>
+      <trans-unit id="label.roles">
+        <source>label.roles</source>
         <target>Roles</target>
-      </trans-unit>
-      <trans-unit id="Add New">
-        <source>Add New</source>
-        <target>Add New</target>
       </trans-unit>
       <trans-unit id="label.title">
         <source>label.title</source>
@@ -110,7 +70,6 @@
         <source>message.deleted_successfully</source>
         <target>Deleted successfully.</target>
       </trans-unit>
-
       <trans-unit id="title.post_details">
         <source>title.post_details</source>
         <target>Post details #%id%</target>
@@ -203,28 +162,28 @@
         <source>message.updated_successfully</source>
         <target>Updated Succesfully</target>
       </trans-unit>
-      <trans-unit id="welcome">
-        <source>welcome</source>
+      <trans-unit id="title.welcome">
+        <source>title.welcome</source>
         <target>Welcome</target>
       </trans-unit>
-      <trans-unit id="mainpage">
-        <source>mainpage</source>
+      <trans-unit id="menu.mainpage">
+        <source>menu.mainpage</source>
         <target>Main Page</target>
       </trans-unit>
-      <trans-unit id="posts">
-        <source>posts</source>
+      <trans-unit id="menu.posts">
+        <source>menu.posts</source>
         <target>Posts</target>
       </trans-unit>
-      <trans-unit id="users">
+      <trans-unit id="menu.users">
         <source>users</source>
         <target>Users</target>
       </trans-unit>
-      <trans-unit id="categories">
-        <source>categories</source>
+      <trans-unit id="menu.categories">
+        <source>menu.categories</source>
         <target>Categories</target>
       </trans-unit>
-      <trans-unit id="logout">
-        <source>logout</source>
+      <trans-unit id="action.logout">
+        <source>action.logout</source>
         <target>Logout</target>
       </trans-unit>
       <trans-unit id="category.create">
@@ -251,12 +210,8 @@
         <source>category.add</source>
         <target>Add Category</target>
       </trans-unit>
-      <trans-unit id="backtolist">
-        <source>backtolist</source>
-        <target>Back to list</target>
-      </trans-unit>
-      <trans-unit id="remember">
-        <source>remember</source>
+      <trans-unit id="form.remember_me">
+        <source>form.remember_me</source>
         <target>Remember me</target>
       </trans-unit>
       <trans-unit id="users.list">
@@ -270,6 +225,30 @@
       <trans-unit id="title.user_edit">
           <source>title.user_edit</source>
           <target>Edit user</target>
+      </trans-unit>
+      <trans-unit id="label.nick">
+          <source>label.nick</source>
+          <target>Nickname</target>
+      </trans-unit>
+      <trans-unit id="label.email">
+          <source>label.email</source>
+          <target>Email address</target>
+      </trans-unit>
+      <trans-unit id="label.post_date">
+          <source>label.post_date</source>
+          <target>Publication date</target>
+      </trans-unit>
+      <trans-unit id="label.category_title">
+          <source>label.category_title</source>
+          <target>Category title</target>
+      </trans-unit>
+      <trans-unit id="title.comment_create">
+        <source>title.comment_create</source>
+        <target>Create Comment</target>
+      </trans-unit>
+      <trans-unit id="title.comment_delete">
+        <source>title.comment_delete</source>
+        <target>Delete Comment #%id%</target>
       </trans-unit>
     </body>
   </file>

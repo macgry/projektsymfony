@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Post list input filters DTO.
  */
