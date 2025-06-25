@@ -16,7 +16,6 @@ use App\Dto\PostListInputFiltersDto;
 use App\Entity\Comment;
 use App\Entity\Post;
 use App\Repository\CommentRepository;
-use Knp\Bundle\PaginatorBundle\Pagination\SlidingPagination;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -27,14 +26,24 @@ class CommentService implements CommentServiceInterface
 {
     private const PAGINATOR_ITEMS_PER_PAGE = 10;
 
-    public function __construct(
-        private readonly CategoryServiceInterface $categoryService,
-        private readonly PaginatorInterface $paginator,
-        private readonly CommentRepository $commentRepository
-    ) {}
+    /**
+     * CommentService constructor.
+     *
+     * @param CategoryServiceInterface $categoryService   Category service
+     * @param PaginatorInterface       $paginator         Paginator
+     * @param CommentRepository        $commentRepository Comment repository
+     */
+    public function __construct(private readonly CategoryServiceInterface $categoryService, private readonly PaginatorInterface $paginator, private readonly CommentRepository $commentRepository)
+    {
+    }
 
     /**
      * Get paginated list of all comments (with filters).
+     *
+     * @param int                     $page    Page number
+     * @param PostListInputFiltersDto $filters Filters DTO
+     *
+     * @return PaginationInterface Paginated list of comments
      */
     public function getPaginatedList(int $page, PostListInputFiltersDto $filters): PaginationInterface
     {
@@ -49,6 +58,11 @@ class CommentService implements CommentServiceInterface
 
     /**
      * Get paginated comments for a specific post.
+     *
+     * @param Post $post Post entity
+     * @param int  $page Page number
+     *
+     * @return PaginationInterface Paginated list
      */
     public function getPaginatedListByPost(Post $post, int $page): PaginationInterface
     {
@@ -59,16 +73,33 @@ class CommentService implements CommentServiceInterface
         );
     }
 
+    /**
+     * Save comment entity.
+     *
+     * @param Comment $comment Comment entity
+     */
     public function save(Comment $comment): void
     {
         $this->commentRepository->save($comment);
     }
 
+    /**
+     * Delete comment entity.
+     *
+     * @param Comment $comment Comment entity
+     */
     public function delete(Comment $comment): void
     {
         $this->commentRepository->delete($comment);
     }
 
+    /**
+     * Prepare filters.
+     *
+     * @param PostListInputFiltersDto $filters Input filters
+     *
+     * @return PostListFiltersDto Output filters
+     */
     private function prepareFilters(PostListInputFiltersDto $filters): PostListFiltersDto
     {
         return new PostListFiltersDto(

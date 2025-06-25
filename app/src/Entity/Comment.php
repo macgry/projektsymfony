@@ -38,7 +38,7 @@ class Comment
     #[Assert\NotBlank]
     private ?string $content = null;
 
-    #[ORM\ManyToOne(targetEntity: Post::class, fetch: 'EXTRA_LAZY')]
+    #[ORM\ManyToOne(targetEntity: Post::class, inversedBy: 'comments', fetch: 'EXTRA_LAZY')]
     #[ORM\JoinColumn(nullable: false)]
     #[Assert\NotNull]
     private ?Post $post = null;
@@ -130,5 +130,4 @@ class Comment
 
         return $this;
     }
-
 }

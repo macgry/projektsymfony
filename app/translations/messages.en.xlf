@@ -175,7 +175,7 @@
         <target>Posts</target>
       </trans-unit>
       <trans-unit id="menu.users">
-        <source>users</source>
+        <source>menu.users</source>
         <target>Users</target>
       </trans-unit>
       <trans-unit id="menu.categories">

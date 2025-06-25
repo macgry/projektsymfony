@@ -240,6 +240,9 @@ class Post
     #[ORM\OneToMany(mappedBy: 'post', targetEntity: Comment::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $comments;
 
+    /**
+     * Post constructor.
+     */
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -253,6 +256,13 @@ class Post
         return $this->comments;
     }
 
+    /**
+     * Add a comment to the post.
+     *
+     * @param Comment $comment The comment to add
+     *
+     * @return static Returns the current instance for method chaining
+     */
     public function addComment(Comment $comment): static
     {
         if (!$this->comments->contains($comment)) {
@@ -263,6 +273,13 @@ class Post
         return $this;
     }
 
+    /**
+     * Remove a comment from the post.
+     *
+     * @param Comment $comment The comment to remove
+     *
+     * @return static Returns the current instance for method chaining
+     */
     public function removeComment(Comment $comment): static
     {
         if ($this->comments->removeElement($comment)) {

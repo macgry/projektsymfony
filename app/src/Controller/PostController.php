@@ -10,11 +10,9 @@ use App\Dto\PostListInputFiltersDto;
 use App\Entity\Post;
 use App\Entity\User;
 use App\Form\Type\PostType;
-use App\Repository\CommentRepository;
 use App\Resolver\PostListInputFiltersDtoResolver;
 use App\Service\PostServiceInterface;
 use App\Service\CommentServiceInterface;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -74,10 +72,9 @@ class PostController extends AbstractController
     /**
      * Show action.
      *
-     * @param Post               $post              Post entity
-     * @param CommentRepository  $commentRepository Comment repository
-     * @param PaginatorInterface $paginator         Paginator
-     * @param Request            $request           HTTP request
+     * @param Post                    $post           Post entity
+     * @param Request                 $request        HTTP request
+     * @param CommentServiceInterface $commentService Comment service
      *
      * @return Response HTTP response
      */
